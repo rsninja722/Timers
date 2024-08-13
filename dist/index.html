@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timers</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <aside class="left-panel">
+        <h3>Controls</h3>
+        <section class="card level1 flexy" style="list-style-type: none; display: inline-block;">
+            <md-outlined-text-field id="input-label" class="spaced" label="Timer Name" value="name" type="text"></md-outlined-text-field>
+            <md-outlined-text-field id="input-time" class="spaced" label="Time Limit" value="30" type="number"  suffix-text="minutes"></md-outlined-text-field>
+            <br><input type="color" id="input-color" class="spaced" value="#9b2f2f"/>
+            <md-elevated-button id="button-timer-add" style="margin-right: 4px;">Add</md-elevated-button>
+            <md-elevated-button id="button-timer-delete" class="toggle-delete-button" style="margin-right: 4px;">Delete Timers</md-elevated-button>
+        </section>
+        <md-divider style="margin: 1em 0;"></md-divider>
+        <section style="height: 40vh;">
+            <md-outlined-text-field id="input-preset-name" class="spaced" label="Preset Name" value="name" type="text"></md-outlined-text-field>
+            <md-elevated-button id="button-preset-add" class="spaced">Add Preset</md-elevated-button>
+            <div style="margin: 0.5em 0;">
+                <span>Active Preset: </span><span id="active-preset">None</span>
+            </div>
+            <md-list id="preset-list">
+            </md-list>
+        </section>
+    </aside>
+    <main class="center-panel">
+        <section class="card level1">
+            <h3>Timers</h3> 
+            <md-list id="timer-list">
+                <!-- <md-list-item>
+                        <div class="card level1 flexy" style="background-color: #9b2f2f;">
+                            <md-elevated-button>Start</md-elevated-button>
+                            <label class="timer-label">Label 1</label><br>
+                        <span class="timer-time">000m 00s</span><span>/</span><span class="timer-max">000m 10s</span>
+                        <md-linear-progress value="0.4"></md-linear-progress>
+                    </div>
+                </md-list-item>
+                <md-divider></md-divider> -->
+            </md-list>
+        </section>
+    </main>
+    <main class="center-panel">
+        <div class="card back1 level1" id="log-card">
+            <h3>Log Book</h3>
+            <div class="card level1" style="display: inline-block;">
+                <md-outlined-text-field id="input-log" class="spaced" label="Log" value="" type="text"></md-outlined-text-field>
+                <br><br>
+                <md-elevated-button id="button-log-enter">Add</md-elevated-button>
+                <md-elevated-button id="button-log-delete" class="toggle-delete-button">Delete Logs</md-elevated-button>
+            </div>
+            <div>
+                <p>Logs</p>
+                <div id="log-list">
+                </div>
+            </div>
+        </div>
+    </main>
+    <aside class="right-panel">
+        <h3>Goals</h3>
+        <div class="card level1" style="display: inline-block;">
+            <md-outlined-text-field id="input-goal" class="spaced" label="Goal" value="" type="text"></md-outlined-text-field>
+            <br><br>
+            <md-elevated-button id="button-goal-enter">Add</md-elevated-button>
+            <md-elevated-button id="button-goal-delete" class="toggle-delete-button" style="margin-right: 0;">Delete Goals</md-elevated-button>
+        </div>
+        <md-list id="goal-list"></md-list>
+    
+    </aside>
+    <md-fab id="next-day" label="Next Day">
+        <md-icon slot="icon">update</md-icon>
+    </md-fab>
+    <md-fab id="button-settings" label="Settings">
+        <md-icon slot="icon">settings</md-icon>
+    </md-fab>
+
+
+    <div id="settings" style="z-index: 10; display: none;">
+        <div class="card level1" style="display: block; height: 60vh;">
+            <div style="display: flex;">
+                <h3>Settings</h3><md-elevated-button id="button-settings-close" style="margin-left: auto;">X</md-elevated-button>
+            </div>
+            <md-divider></md-divider>
+            <div style="display: flex; height: 75%;">
+                <div style="border-right: 1px solid #9bb5e2; height: 100%; padding: 1em;">
+                    <md-elevated-button id="button-export">Export</md-elevated-button>
+                    <textarea id="settings-export" style="width: 150px; height: 100px; resize: none;"></textarea>
+                </div>
+                <div style="border-right: 1px solid #9bb5e2; height: 100%; padding: 1em;">
+                    <md-elevated-button id="button-import">Import</md-elevated-button>
+                    <md-outlined-text-field id="settings-import" class="spaced" label="Import data" value="" type="text"></md-outlined-text-field>
+                </div>
+                <div style="height: 100%; padding: 1em;">
+                    <h4>Merge logs/goals from different save</h4>
+                    <md-elevated-button id="button-merge-goals">Merge goals</md-elevated-button>
+                    <md-elevated-button id="button-merge-logs">Merge logs</md-elevated-button>
+                    <md-outlined-text-field id="settings-merge" class="spaced" label="Merge data" value="" type="text"></md-outlined-text-field>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./bundle.js"></script>
+</body>
+
+</html>
