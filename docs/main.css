@@ -83,12 +83,17 @@ textarea {
 }
 
 body {
-    display: flex;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     background-color: var(--background1); /* Dark background */
     color: var(--color1); /* Light text */
     font: 400 16px/1.5 "Roboto", sans-serif;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .level1 {
@@ -110,8 +115,7 @@ label {
     flex-direction: column;
     width: 20vw;
     background-color: var(--background1);
-    padding: 16px;
-    height: 90vh;
+    padding: 0 16px;
 }
 
 md-list, #log-list {
@@ -140,10 +144,10 @@ md-list .card {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 0 16px;
     overflow-y: clip;
     background-color: var(--background2);
-    height: 95vh;
+    
 }
 
 #log-card {
@@ -188,7 +192,7 @@ md-divider {
     flex-direction: column;
     width: 20%;
     background-color: var(--background1);
-    padding: 16px;
+    padding: 0 16px;
 }
 
 .top-section {
@@ -276,4 +280,45 @@ md-elevated-button {
     align-items: center;
     left: 0;
     top: 0;
+}
+
+#components {
+    display: flex;
+    height: 95vh;
+}
+
+#top-bar {
+    height: 4vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background2);
+    border-bottom: 1px solid var(--outline);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5), 0 2px 2px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    font-family: "Source Code Pro", "DejaVu Sans Mono", Menlo, "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+    font-size: 3vh;
+}
+
+#weather {
+    width: 30vw;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.scroll-text {
+    white-space: nowrap;
+    cursor: e-resize;
+    width: fit-content;
+}
+
+#weather:hover .scroll-text {
+    animation: moveText 10s infinite cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+@keyframes moveText {
+    to {
+        transform: translateX(-100%);
+    }
 }

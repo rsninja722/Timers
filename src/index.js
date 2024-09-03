@@ -8,6 +8,7 @@ import Settings from './components/settings.js';
 import Timers from './components/timers.js';
 import Logs from './components/logs.js';
 import Goals from './components/goals.js';
+import Bar from './components/bar.js';
 
 // initalize alarm sound once page has been clicked once
 document.addEventListener("click", () => {
@@ -61,4 +62,5 @@ document.addEventListener("DOMContentLoaded", () => {
     Timers.onLoad();
     Logs.onLoad();
     Goals.onLoad();
+    Bar.onLoad();
 });

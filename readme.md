@@ -15,6 +15,8 @@ Use at [https://rsninja.dev/Timers](https://rsninja.dev/Timers).
 | [material-web](https://github.com/material-components/material-web) | Web implementation of Google's [Material Design](https://m3.material.io/) |
 | [webpack](https://webpack.js.org/) | Bundles modules into static assets |
 
+weather provided by [wttr.in](https://github.com/chubin/wttr.in)
+
 ## Building
 
 - Clone the repository
@@ -22,6 +24,10 @@ Use at [https://rsninja.dev/Timers](https://rsninja.dev/Timers).
 - Run `npm run build`
 
 ## Usage
+
+### Info bar
+
+- hover over weather text to see more information
 
 ### Controls
 
