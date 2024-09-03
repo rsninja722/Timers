@@ -15,7 +15,7 @@ class Bar {
     }
 
     static updateWeather() {
-        let weatherURL = "http://wttr.in/?format=j1";
+        let weatherURL = "https://wttr.in/?format=j1";
 
         fetch(weatherURL)
             .then((response) => response.json())
