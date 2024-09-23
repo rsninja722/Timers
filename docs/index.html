@@ -39,7 +39,7 @@
                     <md-elevated-button id="button-timer-delete" class="toggle-delete-button"
                         style="margin-right: 4px;">Delete Timers</md-elevated-button>
                 </section>
-                <md-divider style="margin: 1em 0;"></md-divider>
+                <md-divider style="margin: 0.75em 0;"></md-divider>
                 <section style="height: 40vh;overflow-y: clip;">
                     <md-outlined-text-field id="input-preset-name" class="spaced" label="Preset Name" value="name"
                         type="text"></md-outlined-text-field>
@@ -65,6 +65,25 @@
                         </md-list-item>
                         <md-divider></md-divider> -->
                     </md-list>
+                    <h3 style="margin: 0.5em 0 0 0;">Pomodoro Timer</h3>
+                    <div id="pomodoro-div">
+                        <md-elevated-button id="button-pomodoro-start" style="margin-right: 1em;">Start</md-elevated-button>
+                        <md-elevated-button id="button-pomodoro-pause" style="margin-right: 1em;" disabled>Pause</md-elevated-button>
+                        <md-elevated-button id="button-pomodoro-new" style="margin-right: 1em;--_container-color: #c04949;" class="delete-button">New</md-elevated-button>
+                        <br>
+                        <span> Work Minutes</span><input type="number" class="number-input" min="1" value="5" id="input-pomodoro-work-mins">
+                        <span> Break Minutes</span><input type="number" class="number-input" min="1" value="5" id="input-pomodoro-break-mins">
+                        <br>
+                        <span>Block plan</span>
+                        <textarea id="pomodoro-plan" style="width: 98%; height: 100px; resize: none;" spellcheck="false"></textarea>
+                        <br>
+                        <span>Block reflection</span>
+                        <textarea id="pomodoro-reflection" style="width: 98%; height: 100px; resize: none;" spellcheck="false"></textarea>
+                        <br>
+                        <span>Phase: </span><span id="pomodoro-timer-phase">work</span><span> | </span><span id="pomodoro-time"></span><span>/</span><span id="pomodoro-max"></span>
+                        <md-linear-progress id="pomodoro-progress" value="0"></md-linear-progress>
+
+                    </div>
                 </section>
             </main>
             <main class="center-panel">

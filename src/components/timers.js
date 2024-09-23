@@ -2,8 +2,12 @@ import { common, changeFaviconActive, changeFaviconDefault, createElement, saveD
 
 class Timers {
     static parseTime(text) {
+        if(!text) {
+            return [0, 0];
+        }
+        
         let minutes = text.split(" ")[0];
-        minutes = parseInt(minutes.slice(0, minutes.length - 1)); // ?
+        minutes = parseInt(minutes.slice(0, minutes.length - 1));
 
         let seconds = text.split(" ")[1];
         seconds = parseInt(seconds.slice(0, seconds.length - 1));

@@ -36,6 +36,11 @@ weather provided by [wttr.in](https://github.com/chubin/wttr.in)
     - activate a preset by clicking the button with the respective preset's name
     - switching presets does not reset timer progress
 - timers - create a new timer with the interface in the top left, new timers will be added to the active preset
+    - pomodoro timer
+        - Enter the minutes each phase should last
+        - "Block plan" and "Block reflection" are non-functional but provide a space to write during breaks
+        - "Start" button starts or resumes current progress on the timer
+        - "New" button clears writing space and resets the timer
 - "Next Day" button - to reset the progress on all timers once a new day has started, press this button
 - "Settings" button - opens a menu to export/import a save, and to merge the logs or goals from a different saves into the active save
 

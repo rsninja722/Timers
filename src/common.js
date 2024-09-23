@@ -6,6 +6,7 @@ import Goals from './components/goals.js';
 let common = {
     intervals: {},
     alarm: null,
+    tone: null,
     activePreset: "default" 
 };
 

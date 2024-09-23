@@ -9,15 +9,20 @@ import Timers from './components/timers.js';
 import Logs from './components/logs.js';
 import Goals from './components/goals.js';
 import Bar from './components/bar.js';
+import Pomodoro from './components/pomodoro.js';
 
 // initalize alarm sound once page has been clicked once
 document.addEventListener("click", () => {
-    if(common.alarm) {
-       return;
+    if(!common.alarm ) {
+        common.alarm = new Audio();
+        common.alarm.src = "./assets/alarm.wav";   
     }
-    
-    common.alarm = new Audio();
-    common.alarm.src = "./assets/alarm.wav";   
+    if(!common.tone) {
+        common.tone = new Audio();
+        common.tone.src = "./assets/tone.wav";
+    }
+
+    return;
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -63,4 +68,5 @@ document.addEventListener("DOMContentLoaded", () => {
     Logs.onLoad();
     Goals.onLoad();
     Bar.onLoad();
+    Pomodoro.onLoad();
 });
